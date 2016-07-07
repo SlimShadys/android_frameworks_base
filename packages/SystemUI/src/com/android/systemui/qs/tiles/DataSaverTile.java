@@ -89,6 +89,7 @@ public class DataSaverTile extends QSTileImpl<BooleanState> implements
         dialog.setNegativeButton(com.android.internal.R.string.cancel, null);
         dialog.setShowForAllUsers(true);
         dialog.show();
+
     }
 
     @Override
