@@ -179,7 +179,9 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         @Override
         public void onBiometricRunningStateChanged(boolean running,
             BiometricSourceType biometricSourceType) {
-            dispatchFodFingerprintRunningStateChanged(running);
+            if (biometricSourceType == BiometricSourceType.FINGERPRINT){
+                dispatchFodFingerprintRunningStateChanged(running);
+            }
         }
 		
 		@Override
