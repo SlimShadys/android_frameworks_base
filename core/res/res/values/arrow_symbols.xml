@@ -84,12 +84,13 @@
     <!-- Post reset runnable for all clients -->
     <java-symbol type="bool" name="config_fingerprintPostResetRunnableForAllClients" />
 
-    <!-- In-display Fingerprint -->
-    <java-symbol type="bool" name="config_supportsInDisplayFingerprint" />
-
     <!-- Themes -->
     <java-symbol type="color" name="theme_generic_semi_transparent_color" />
 
     <!-- Whether device has hw keys -->
     <java-symbol type="bool" name="config_canShowNavbarToggle" />
+
+    <!-- Post reset runnable for all clients -->
+    <java-symbol type="bool" name="config_fingerprintPostResetRunnableForAllClients" />
+
 </resources>
