@@ -78,6 +78,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
     private boolean mIsKeyguard;
     private boolean mIsShowing;
     private boolean mIsCircleShowing;
+    private boolean mIsAuthenticated;
 
     private Handler mHandler;
 
