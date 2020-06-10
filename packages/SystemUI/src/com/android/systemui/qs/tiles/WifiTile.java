@@ -57,7 +57,7 @@ import javax.inject.Inject;
 
 /** Quick settings tile: Wifi **/
 public class WifiTile extends QSTileImpl<SignalState> {
-    private static final Intent WIFI_SETTINGS = new Intent(Settings.ACTION_WIFI_SETTINGS);
+    private static final Intent WIFI_SETTINGS = new Intent(Settings.Panel.ACTION_WIFI);
 
     protected final NetworkController mController;
     private final AccessPointController mWifiController;
@@ -85,7 +85,7 @@ public class WifiTile extends QSTileImpl<SignalState> {
 
     @Override
     public boolean isDualTarget() {
-        return true;
+        return false;
     }
 
     @Override
