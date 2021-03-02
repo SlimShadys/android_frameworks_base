@@ -25,8 +25,6 @@ import com.android.systemui.SystemUI;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.CommandQueue.Callbacks;
 
-import com.android.internal.util.custom.fod.FodScreenOffHandler;
-
 import dalvik.system.PathClassLoader;
 import java.lang.reflect.Constructor;
 
@@ -34,7 +32,6 @@ public class FODCircleViewImpl extends SystemUI implements CommandQueue.Callback
     private static final String TAG = "FODCircleViewImpl";
 
     private FODCircleView mFodCircleView;
-    private FodScreenOffHandler mFodScreenOffHandler;
 
     @Override
     public void start() {
@@ -57,8 +54,6 @@ public class FODCircleViewImpl extends SystemUI implements CommandQueue.Callback
 
                 Class<?> klass = loader.loadClass(fodScreenOffHandlerClass);
                 Constructor<?> constructor = klass.getConstructor(Context.class);
-                mFodScreenOffHandler = (FodScreenOffHandler) constructor.newInstance(
-                        mContext);
             } catch (Exception e) {
                 Slog.w(TAG, "Could not instantiate fod screen off handler "
                         + fodScreenOffHandlerClass + " from class "
@@ -67,7 +62,7 @@ public class FODCircleViewImpl extends SystemUI implements CommandQueue.Callback
         }
 
         try {
-            mFodCircleView = new FODCircleView(mContext, mFodScreenOffHandler);
+            mFodCircleView = new FODCircleView(mContext);
         } catch (RuntimeException e) {
             // do nothing
         }
